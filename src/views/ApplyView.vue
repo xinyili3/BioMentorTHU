@@ -2,7 +2,6 @@
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import PageIntro from '../components/PageIntro.vue'
 
-const downloadUrl = `${import.meta.env.BASE_URL}downloads/test.pdf`
 const forms = [
   {
     id: 'mentee',
@@ -10,7 +9,8 @@ const forms = [
     description: 'For Tsinghua students seeking mentoring and application guidance.',
     buttonLabel: 'Download Mentee Form',
     buttonClass: 'button-primary',
-    filename: 'mentee-application-form.pdf',
+    downloadUrl: `${import.meta.env.BASE_URL}downloads/BioMentor%20THU_2026%20Mentee%20Application%20Form.pdf`,
+    filename: 'BioMentor THU_2026 Mentee Application Form.pdf',
   },
   {
     id: 'mentor',
@@ -54,7 +54,7 @@ const handleKeydown = (event) => {
 const confirmDownload = () => {
   if (!selectedForm.value || !allAccepted.value) return
   const link = document.createElement('a')
-  link.href = downloadUrl
+  link.href = selectedForm.value.downloadUrl ?? `${import.meta.env.BASE_URL}downloads/test.pdf`
   link.download = selectedForm.value.filename
   document.body.appendChild(link)
   link.click()
