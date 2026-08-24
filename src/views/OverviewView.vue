@@ -6,8 +6,10 @@ import PrinciplesSection from '../components/PrinciplesSection.vue'
 </script>
 
 <template>
-  <HeroSection />
-  <MissionSection />
-  <PilotSection />
-  <PrinciplesSection />
+  <div class="route-view">
+    <HeroSection />
+    <MissionSection />
+    <PilotSection />
+    <PrinciplesSection />
+  </div>
 </template>

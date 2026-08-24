@@ -29,6 +29,10 @@ onBeforeUnmount(() => window.removeEventListener('hashchange', updateRoute))
 
 <template>
   <SiteHeader />
-  <main><component :is="currentView" /></main>
+  <main>
+    <Transition name="page-fade" mode="out-in">
+      <component :is="currentView" :key="currentRoute" />
+    </Transition>
+  </main>
   <SiteFooter />
 </template>

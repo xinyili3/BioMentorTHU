@@ -1,3 +1,5 @@
+import { mentorProfiles } from './mentorProfiles'
+
 export const navigation = [
   { label: 'Program Overview', to: '/' },
   { label: 'Mentors', to: '/mentors' },
@@ -128,26 +130,7 @@ export const mentors = {
     eyebrow: 'Founding Mentors',
     title: 'Meet the people behind the program.',
   },
-  people: [
-    {
-      name: 'Mentor Name',
-      role: 'PhD Student · Yale University',
-      research: 'Neuroscience · Mitochondrial Biology · Stem Cell Models',
-      areas: 'SOP · CV · School / Program Selection · Interview',
-    },
-    {
-      name: 'Mentor Name',
-      role: 'PhD Student · Tsinghua University',
-      research: 'Immunology · Cancer Biology · Cell Signaling',
-      areas: 'SOP · Personal Statement · Interview',
-    },
-    {
-      name: 'Mentor Name',
-      role: 'Postdoctoral Associate · Harvard Medical School',
-      research: 'Genetics · Genomics · Computational Biology',
-      areas: 'School / Program Selection · CV · SOP',
-    },
-  ],
+  people: mentorProfiles,
 }
 
 export const principles = {

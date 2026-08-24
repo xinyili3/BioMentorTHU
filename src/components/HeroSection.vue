@@ -12,7 +12,7 @@
               alumni currently pursuing or recently completing PhD training in China and abroad.
             </p>
             <div class="hero-actions">
-              <RouterLink class="button button-primary" to="/apply">Apply as a Mentee</RouterLink>
+              <RouterLink class="button button-primary" to="/mentees">Apply as a Mentee</RouterLink>
               <RouterLink class="button button-secondary" to="/mentors">Become a Mentor</RouterLink>
             </div>
           </div>

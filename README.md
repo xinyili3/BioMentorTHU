@@ -20,6 +20,8 @@ Deploy the generated `dist` directory to any static hosting service.
 ## Updating the site
 
 - Page copy and repeated card data: `src/content/siteContent.js`
+- Mentor profiles and photo paths: `src/content/mentorProfiles.js`
+- Mentor photo files: `public/mentors/photos`
 - The four top-level views: `src/views`
 - Section structure: `src/components`
 - Visual styling: `src/styles/main.css`
