@@ -7,7 +7,7 @@ import { navigation } from '../content/siteContent'
     <div class="page-shell">
       <div class="brand">
         <!-- <span class="brand-kicker">Demo A</span> -->
-        <span class="brand-name">Tsinghua BioMentoring Program</span>
+        <span class="brand-name">BioMentor THU</span>
       </div>
       <nav class="nav" aria-label="Primary">
         <RouterLink v-for="item in navigation" :key="item.to" :to="item.to">

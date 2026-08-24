@@ -5,7 +5,7 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Volunteer-led mentoring initiative</span>
-            <h1>Tsinghua BioMentoring Program</h1>
+            <h1>BioMentor THU</h1>
             <p class="lead">
               Connecting Tsinghua students with mentors who have walked the path. We support
               undergraduates in the life and biomedical sciences through one-on-one guidance from
