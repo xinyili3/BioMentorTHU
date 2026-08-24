@@ -101,7 +101,7 @@ onBeforeUnmount(() => {
             <h3>Submit by email</h3>
             <p>
               Send your completed application form to
-              <a class="email-link" href="mailto:xxxx@email.com">xxxx@email.com</a>.
+              <a class="email-link" href="mailto:biomentorthu@gmail.com">biomentorthu@gmail.com</a>.
             </p>
           </div>
         </li>
