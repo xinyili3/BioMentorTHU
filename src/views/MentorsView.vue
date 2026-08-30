@@ -5,8 +5,8 @@ import MentorsSection from '../components/MentorsSection.vue'
 import { localized } from '../composables/useLanguage'
 
 const copy = localized({
-  en: { eyebrow: 'Mentors', title: 'Help mentees navigate the path ahead.', description: 'Learn who can mentor, how volunteering works, and meet the founding mentors behind the program.' },
-  zh: { eyebrow: '导师', title: '帮助学生更从容地走好前方的路。', description: '了解谁可以成为导师、志愿指导如何开展，并认识项目的创始导师。' },
+  en: { eyebrow: 'Meet Our Team', title: 'Meet the people behind BioMentor THU.', description: 'Get to know the founding mentors and program team who contribute their experience, care, and time to make each connection possible.' },
+  zh: { eyebrow: '认识团队', title: '认识 BioMentor THU 背后的同行者。', description: '了解创始导师与项目运营团队——他们投入经验、关怀与时间，让每一次导师连接成为可能。' },
 })
 </script>
 
@@ -17,7 +17,7 @@ const copy = localized({
       :title="copy.title"
       :description="copy.description"
     />
-    <MentorCallSection />
     <MentorsSection />
+    <MentorCallSection />
   </div>
 </template>

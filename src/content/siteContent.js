@@ -4,8 +4,8 @@ import { mentorProfiles } from './mentorProfiles'
 
 const en = {
   navigation: [
-    { label: 'Program Overview', to: '/' }, { label: 'Mentors', to: '/mentors' },
-    { label: 'Mentees', to: '/mentees' }, { label: 'Apply', to: '/apply' },
+    { label: 'Program Overview', to: '/' }, { label: 'For Mentees', to: '/mentees' },
+    { label: 'Meet Our Team', to: '/mentors' }, { label: 'Apply', to: '/apply' },
   ],
   mission: {
     heading: { eyebrow: 'Our Mission', title: 'Mentorship should not depend on who you happen to know.', description: 'Preparing for a PhD often involves questions that are difficult to answer from websites or application guides alone. This program brings students and alumni together through structured, personalized mentorship so that the path toward advanced research training feels clearer and more supportive.' },
@@ -40,7 +40,7 @@ const en = {
     flexibility: "There is no expectation that every mentor supports every part of an application. The program is built to respect mentors' expertise, availability, and boundaries.",
   },
   mentors: {
-    heading: { eyebrow: 'Our Community', title: 'Meet the people behind the program.' },
+    heading: { eyebrow: 'Our Community', title: 'Experience, guidance, and care from across our community.' },
     mentorLabel: 'Founding Mentors',
     operatorHeading: { eyebrow: 'Program Team', title: 'The people who keep the program moving.' },
     operators: [
@@ -69,8 +69,8 @@ const en = {
 
 const zh = {
   navigation: [
-    { label: '项目概览', to: '/' }, { label: '导师', to: '/mentors' },
-    { label: '学生', to: '/mentees' }, { label: '申请', to: '/apply' },
+    { label: '项目概览', to: '/' }, { label: '学生专区', to: '/mentees' },
+    { label: '认识团队', to: '/mentors' }, { label: '申请', to: '/apply' },
   ],
   mission: {
     heading: { eyebrow: '我们的使命', title: '获得导师指引，不应取决于你恰好认识谁。', description: '准备博士申请时，许多问题仅靠网站或申请指南很难找到答案。本项目通过有组织、个性化的导师交流连接清华学生与校友，让通往进阶科研训练的道路更清晰，也更有支持。' },
@@ -105,7 +105,7 @@ const zh = {
     flexibility: '我们不要求每位导师覆盖申请的所有环节。项目充分尊重导师的专业经验、时间安排与个人边界。',
   },
   mentors: {
-    heading: { eyebrow: '我们的社群', title: '认识项目背后的同行者。' },
+    heading: { eyebrow: '我们的社群', title: '汇聚社群中的经验、指引与关怀。' },
     mentorLabel: '创始导师',
     operatorHeading: { eyebrow: '项目团队', title: '让项目持续运转的人。' },
     operators: [
