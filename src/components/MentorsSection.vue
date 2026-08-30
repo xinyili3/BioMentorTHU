@@ -2,6 +2,12 @@
 import { nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import SectionHeading from './SectionHeading.vue'
 import { mentors } from '../content/siteContent'
+import { localized } from '../composables/useLanguage'
+
+const copy = localized({
+  en: { research: 'Research Interests', areas: 'Mentoring Areas', profile: 'View Profile', all: 'Meet All Mentors', close: 'Close mentor profile', profileEyebrow: 'Mentor Profile', share: 'What This Mentor Can Share', support: 'Available Support' },
+  zh: { research: '研究兴趣', areas: '指导领域', profile: '查看简介', all: '认识全部导师', close: '关闭导师简介', profileEyebrow: '导师简介', share: '这位导师可以分享', support: '可提供的支持' },
+})
 
 const selectedMentor = ref(null)
 const closeButton = ref(null)
@@ -26,6 +32,12 @@ watch(selectedMentor, async (mentor) => {
   }
 })
 
+watch(mentors, (content) => {
+  if (selectedMentor.value) {
+    selectedMentor.value = content.people.find(({ id }) => id === selectedMentor.value.id) ?? null
+  }
+})
+
 onBeforeUnmount(() => {
   document.body.style.overflow = ''
   document.removeEventListener('keydown', handleKeydown)
@@ -37,21 +49,35 @@ onBeforeUnmount(() => {
     <div class="page-shell">
       <div class="section-card">
         <SectionHeading v-bind="mentors.heading" />
+        <h3 class="people-group-title">{{ mentors.mentorLabel }}</h3>
         <div class="mentor-grid">
           <article v-for="mentor in mentors.people" :key="mentor.id" class="mentor-card">
             <h3>{{ mentor.name }}</h3>
             <p class="mentor-role">{{ mentor.role }}</p>
-            <strong>Research Interests</strong>
+            <strong>{{ copy.research }}</strong>
             <p>{{ mentor.research }}</p>
-            <strong>Mentoring Areas</strong>
+            <strong>{{ copy.areas }}</strong>
             <p>{{ mentor.areas }}</p>
             <button class="button button-secondary" type="button" @click="selectedMentor = mentor">
-              View Profile
+              {{ copy.profile }}
             </button>
           </article>
         </div>
         <div class="hero-actions section-actions">
-          <RouterLink class="button button-secondary" to="/apply">Meet All Mentors</RouterLink>
+          <RouterLink class="button button-secondary" to="/apply">{{ copy.all }}</RouterLink>
+        </div>
+        <div class="operator-section">
+          <SectionHeading v-bind="mentors.operatorHeading" />
+          <div class="operator-grid">
+            <article v-for="operator in mentors.operators" :key="operator.id" class="operator-card">
+              <div class="operator-monogram" aria-hidden="true">{{ operator.name.charAt(0) }}</div>
+              <div>
+                <h3>{{ operator.name }}</h3>
+                <p class="operator-role">{{ operator.role }}</p>
+                <p>{{ operator.description }}</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </div>
@@ -74,8 +100,8 @@ onBeforeUnmount(() => {
           ref="closeButton"
           class="modal-close"
           type="button"
-          aria-label="Close mentor profile"
-          title="Close"
+          :aria-label="copy.close"
+          :title="copy.close"
           @click="closeProfile"
         >
           ×
@@ -84,25 +110,25 @@ onBeforeUnmount(() => {
           <img :src="resolvePublicAsset(selectedMentor.photo)" :alt="selectedMentor.photoAlt" />
         </div>
         <div class="mentor-modal-content">
-          <span class="eyebrow">Mentor Profile</span>
+          <span class="eyebrow">{{ copy.profileEyebrow }}</span>
           <h2 :id="`mentor-profile-${selectedMentor.id}`">{{ selectedMentor.name }}</h2>
           <p class="mentor-modal-role">{{ selectedMentor.role }}</p>
           <p class="mentor-modal-bio">{{ selectedMentor.bio }}</p>
           <dl class="mentor-profile-details">
             <div>
-              <dt>Research Interests</dt>
+              <dt>{{ copy.research }}</dt>
               <dd>{{ selectedMentor.research }}</dd>
             </div>
             <div>
-              <dt>Mentoring Areas</dt>
+              <dt>{{ copy.areas }}</dt>
               <dd>{{ selectedMentor.areas }}</dd>
             </div>
             <div>
-              <dt>What This Mentor Can Share</dt>
+              <dt>{{ copy.share }}</dt>
               <dd>{{ selectedMentor.experience }}</dd>
             </div>
             <div>
-              <dt>Available Support</dt>
+              <dt>{{ copy.support }}</dt>
               <dd>{{ selectedMentor.availability }}</dd>
             </div>
           </dl>

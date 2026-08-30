@@ -1,8 +1,9 @@
 <script setup>
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import PageIntro from '../components/PageIntro.vue'
+import { localized } from '../composables/useLanguage'
 
-const forms = [
+const forms = localized({ en: [
   {
     id: 'mentee',
     title: 'Mentee Application Form',
@@ -20,20 +21,34 @@ const forms = [
     buttonClass: 'button-secondary',
     filename: 'mentor-application-form.pdf',
   },
-]
+], zh: [
+  { id: 'mentee', title: '学生申请表', description: '面向希望获得导师指导和申请建议的清华学生。', buttonLabel: '下载学生申请表', buttonClass: 'button-primary', downloadUrl: `${import.meta.env.BASE_URL}downloads/BioMentor%20THU_2026%20Mentee%20Application%20Form.pdf`, filename: 'BioMentor THU_2026 Mentee Application Form.pdf' },
+  { id: 'mentor', title: '导师申请表', description: '面向愿意志愿支持清华学生的校友与科研工作者。', buttonLabel: '下载导师申请表', buttonClass: 'button-secondary', filename: 'mentor-application-form.pdf' },
+] })
 
-const disclaimerItems = [
+const disclaimerItems = localized({ en: [
   'I understand that this is a volunteer-led mentoring program and that submitting an application does not guarantee participation or a mentor match.',
   'I confirm that the information I provide in the application is accurate and represents my own experience and work.',
   'I understand that mentors provide guidance and feedback, but will not write or complete application materials on my behalf.',
   'I agree to communicate respectfully, protect confidential information, and respect the time and boundaries of other participants.',
   'I consent to the information in this form being used to review my application and administer the BioMentoring Program.',
-]
+], zh: [
+  '我理解本项目由志愿者组织，提交申请并不保证一定能够参与项目或匹配到导师。',
+  '我确认申请中提供的信息准确无误，并如实反映我本人的经历与工作。',
+  '我理解导师只提供指导和反馈，不会代我撰写或完成申请材料。',
+  '我同意保持尊重的沟通方式，保护保密信息，并尊重其他参与者的时间与个人边界。',
+  '我同意本表中的信息用于审核申请及 BioMentor THU 项目的组织与管理。',
+] })
+
+const copy = localized({
+  en: { eyebrow: 'Applications', title: 'Download an application form.', description: 'Choose the form for your role and download the PDF to begin your application.', how: 'How to Apply', twoSteps: 'Complete your application in two steps.', stepOne: 'Download and complete the form', stepOneText: 'Choose the application form for your role and fill in all required information.', stepTwo: 'Submit by email', stepTwoPrefix: 'Send your completed application form to', downloads: 'Downloads', forms: 'Application forms', close: 'Close disclaimer', before: 'Before You Download', disclaimer: 'Application disclaimer', introBefore: 'Please review and confirm every statement before downloading the', introAfter: '.', cancel: 'Cancel', confirm: 'Confirm and Download' },
+  zh: { eyebrow: '申请', title: '下载申请表。', description: '请选择与你身份对应的表格，下载 PDF 后即可开始填写申请。', how: '申请方式', twoSteps: '分两步完成申请。', stepOne: '下载并填写申请表', stepOneText: '选择与你身份对应的申请表，并填写全部必填信息。', stepTwo: '通过电子邮件提交', stepTwoPrefix: '请将填写完整的申请表发送至', downloads: '下载', forms: '申请表', close: '关闭申请说明', before: '下载之前', disclaimer: '申请须知', introBefore: '下载', introAfter: '前，请阅读并确认以下全部声明。', cancel: '取消', confirm: '确认并下载' },
+})
 
 const selectedForm = ref(null)
 const acceptedItems = ref([])
 const modalCloseButton = ref(null)
-const allAccepted = computed(() => acceptedItems.value.length === disclaimerItems.length)
+const allAccepted = computed(() => acceptedItems.value.length === disclaimerItems.value.length)
 
 const openDisclaimer = async (form) => {
   selectedForm.value = form
@@ -68,6 +83,13 @@ watch(selectedForm, (form) => {
   else document.removeEventListener('keydown', handleKeydown)
 })
 
+watch(forms, (items) => {
+  if (selectedForm.value) {
+    selectedForm.value = items.find(({ id }) => id === selectedForm.value.id) ?? null
+    acceptedItems.value = []
+  }
+})
+
 onBeforeUnmount(() => {
   document.body.style.overflow = ''
   document.removeEventListener('keydown', handleKeydown)
@@ -77,30 +99,30 @@ onBeforeUnmount(() => {
 <template>
   <div class="route-view">
     <PageIntro
-      eyebrow="Applications"
-      title="Download an application form."
-      description="Choose the form for your role and download the PDF to begin your application."
+      :eyebrow="copy.eyebrow"
+      :title="copy.title"
+      :description="copy.description"
     />
     <section class="application-process" aria-labelledby="application-process-title">
     <div class="page-shell">
       <div class="section-heading application-process-heading">
-        <span class="eyebrow">How to Apply</span>
-        <h2 id="application-process-title">Complete your application in two steps.</h2>
+        <span class="eyebrow">{{ copy.how }}</span>
+        <h2 id="application-process-title">{{ copy.twoSteps }}</h2>
       </div>
       <ol class="application-steps">
         <li class="application-step">
           <span class="application-step-number">01</span>
           <div>
-            <h3>Download and complete the form</h3>
-            <p>Choose the application form for your role and fill in all required information.</p>
+            <h3>{{ copy.stepOne }}</h3>
+            <p>{{ copy.stepOneText }}</p>
           </div>
         </li>
         <li class="application-step">
           <span class="application-step-number">02</span>
           <div>
-            <h3>Submit by email</h3>
+            <h3>{{ copy.stepTwo }}</h3>
             <p>
-              Send your completed application form to
+              {{ copy.stepTwoPrefix }}
               <a class="email-link" href="mailto:biomentorthu@gmail.com">biomentorthu@gmail.com</a>.
             </p>
           </div>
@@ -111,8 +133,8 @@ onBeforeUnmount(() => {
     <section class="downloads-section" aria-labelledby="downloads-title">
     <div class="page-shell">
       <div class="section-heading downloads-heading">
-        <span class="eyebrow">Downloads</span>
-        <h2 id="downloads-title">Application forms</h2>
+        <span class="eyebrow">{{ copy.downloads }}</span>
+        <h2 id="downloads-title">{{ copy.forms }}</h2>
       </div>
       <div class="application-downloads">
         <article v-for="form in forms" :key="form.id" class="download-card">
@@ -151,17 +173,16 @@ onBeforeUnmount(() => {
           ref="modalCloseButton"
           class="modal-close"
           type="button"
-          aria-label="Close disclaimer"
-          title="Close"
+          :aria-label="copy.close"
+          :title="copy.close"
           @click="closeDisclaimer"
         >
           ×
         </button>
-        <span class="eyebrow">Before You Download</span>
-        <h2 id="disclaimer-title">Application disclaimer</h2>
+        <span class="eyebrow">{{ copy.before }}</span>
+        <h2 id="disclaimer-title">{{ copy.disclaimer }}</h2>
         <p id="disclaimer-description" class="disclaimer-intro">
-          Please review and confirm every statement before downloading the
-          {{ selectedForm.title }}.
+          {{ copy.introBefore }} {{ selectedForm.title }}{{ copy.introAfter }}
         </p>
         <div class="disclaimer-items">
           <label v-for="(item, index) in disclaimerItems" :key="item" class="disclaimer-item">
@@ -171,7 +192,7 @@ onBeforeUnmount(() => {
         </div>
         <div class="disclaimer-actions">
           <button class="button button-secondary" type="button" @click="closeDisclaimer">
-            Cancel
+            {{ copy.cancel }}
           </button>
           <button
             class="button button-primary"
@@ -179,7 +200,7 @@ onBeforeUnmount(() => {
             :disabled="!allAccepted"
             @click="confirmDownload"
           >
-            Confirm and Download
+            {{ copy.confirm }}
           </button>
         </div>
       </section>

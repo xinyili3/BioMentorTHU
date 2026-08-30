@@ -19,7 +19,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  font-family: "Source Sans 3", "Noto Sans SC", "Microsoft YaHei", "PingFang SC", "Segoe UI", Arial, sans-serif;
   color: var(--ink);
   background:
     radial-gradient(circle at top left, rgba(201, 139, 74, 0.18), transparent 30%),
@@ -98,6 +98,28 @@ img { display: block; max-width: 100%; }
 }
 .nav a.router-link-exact-active { color: var(--brand); }
 .nav a.router-link-exact-active::after { transform: scaleX(1); }
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  padding: 4px 5px;
+  border: 1px solid rgba(15, 91, 69, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.language-switch button {
+  padding: 5px 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.language-switch button:hover, .language-switch button:focus-visible { color: var(--brand); }
+.language-switch button.active { background: var(--brand); color: #fffaf3; font-weight: 700; }
 
 .page-intro { padding: 76px 0 28px; }
 .page-intro .page-shell { max-width: 900px; margin-left: max(16px, calc((100% - var(--max-width)) / 2)); }
@@ -144,6 +166,7 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0;
   line-height: 0.97;
 }
+.section-heading h2 { line-height: 1.1; }
 .hero-copy h1 { max-width: 9ch; font-size: clamp(3rem, 7vw, 5.6rem); }
 .hero-copy p.lead { max-width: 60ch; margin: 22px 0 0; font-size: 1.12rem; line-height: 1.8; color: var(--muted); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
@@ -221,6 +244,46 @@ main section { padding: 30px 0; }
 .mentor-role { margin-bottom: 18px; color: var(--brand); font-weight: 600; }
 .mentor-card strong { display: block; margin: 18px 0 6px; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); }
 .mentor-card .button { margin-top: 18px; }
+.people-group-title {
+  margin: 0 0 16px;
+  color: var(--brand);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.operator-section {
+  margin-top: 42px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+.operator-section .section-heading { margin-bottom: 20px; }
+.operator-section .section-heading h2 { font-size: clamp(1.7rem, 3vw, 2.45rem); }
+.operator-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.operator-card {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  padding: 24px;
+  border: 1px solid rgba(24, 38, 31, 0.08);
+  border-radius: var(--radius-md);
+  background: linear-gradient(145deg, rgba(15, 91, 69, 0.08), rgba(255, 255, 255, 0.62));
+}
+.operator-monogram {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fffaf3;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+.operator-card h3 { margin: 0 0 2px; }
+.operator-card p { margin: 0; color: var(--muted); line-height: 1.7; }
+.operator-card .operator-role { margin-bottom: 10px; color: var(--brand); font-weight: 600; }
 .mentor-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -419,10 +482,21 @@ main section { padding: 30px 0; }
 .site-footer { padding: 36px 0 54px; color: var(--muted); font-size: 0.95rem; }
 .site-footer .page-shell { border-top: 1px solid rgba(24, 38, 31, 0.1); padding-top: 18px; }
 
+html[lang="zh-CN"] .hero-copy h1,
+html[lang="zh-CN"] .section-heading h2,
+html[lang="zh-CN"] .page-intro h1,
+html[lang="zh-CN"] .application-cta-panel h2,
+html[lang="zh-CN"] .mentor-modal-content h2,
+html[lang="zh-CN"] .disclaimer-modal h2 {
+  font-family: "Noto Serif SC", "Songti SC", SimSun, Georgia, serif;
+  line-height: 1.15;
+}
+
 @media (max-width: 980px) {
-  .hero-grid, .pilot-banner, .mentor-grid, .join-grid, .support-grid, .steps-grid, .principles-grid, .mission-questions { grid-template-columns: 1fr; }
+  .hero-grid, .pilot-banner, .mentor-grid, .operator-grid, .join-grid, .support-grid, .steps-grid, .principles-grid, .mission-questions { grid-template-columns: 1fr; }
   .hero-panel, .section-card { padding: 28px; }
-  .site-header .page-shell { align-items: flex-start; flex-direction: column; }
+  .site-header .page-shell { align-items: center; flex-wrap: wrap; }
+  .nav { order: 3; width: 100%; }
   .application-downloads { grid-template-columns: 1fr; }
   .application-steps { grid-template-columns: 1fr; }
   .application-cta-panel { align-items: flex-start; flex-direction: column; }
@@ -436,7 +510,9 @@ main section { padding: 30px 0; }
   .hero { padding-top: 34px; }
   .hero-panel { border-radius: 28px; padding: 22px; }
   .section-card, .join-card, .mentor-card, .support-item, .step, .principle-card, .stat-card, .pilot-focus { padding: 20px; }
-  .nav { gap: 12px; font-size: 0.9rem; }
+  .site-header .page-shell { gap: 12px; padding: 12px 0; }
+  .nav { justify-content: space-between; gap: 8px; font-size: 0.86rem; }
+  .language-switch { margin-left: auto; }
   .page-intro { padding-top: 44px; }
   .page-intro .page-shell { margin: 0 auto; }
   .download-card, .application-cta-panel { padding: 22px; }
@@ -451,6 +527,8 @@ main section { padding: 30px 0; }
   .disclaimer-modal { max-height: calc(100vh - 24px); padding: 30px 20px 22px; }
   .disclaimer-actions { flex-direction: column-reverse; }
   .disclaimer-actions .button { width: 100%; }
+  .operator-card { grid-template-columns: 48px minmax(0, 1fr); padding: 20px; }
+  .operator-monogram { width: 48px; height: 48px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
