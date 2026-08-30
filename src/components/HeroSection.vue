@@ -2,8 +2,32 @@
 import { localized } from '../composables/useLanguage'
 
 const copy = localized({
-  en: { eyebrow: 'Volunteer-led mentoring initiative', lead: 'Connecting Tsinghua students with mentors who have walked the path. We support undergraduates in the life and biomedical sciences through one-on-one guidance from alumni currently pursuing or recently completing PhD training in China and abroad.', mentee: 'Apply as a Mentee', mentor: 'Become a Mentor', focus: 'Program Focus', focusText: 'Personalized conversations, application feedback, and honest guidance about what PhD training and research life can actually look like.', goal: 'Our goal is to make the path toward advanced research training more transparent, more humane, and more collaborative for future generations of Tsinghua students.' },
-  zh: { eyebrow: '志愿者发起的导师项目', lead: '连接清华学生与曾经走过这段路的导师。我们面向生命科学与生物医学领域的本科生，由正在国内外攻读博士或近期完成博士训练的校友提供一对一指导。', mentee: '申请成为学生', mentor: '申请成为导师', focus: '项目重点', focusText: '通过个性化交流、申请材料反馈与坦诚分享，帮助学生真实了解博士训练与科研生活。', goal: '我们希望让进阶科研训练的道路对一代代清华学生而言更加透明、更有人情味，也更具协作精神。' },
+  en: {
+    eyebrow: 'Volunteer-led mentoring initiative · 2026 Pilot',
+    statement: 'Experience should become a bridge, not a gate.',
+    lead: 'One-to-one guidance for Tsinghua students in the life and biomedical sciences, from alumni who have recently navigated PhD training in China and abroad.',
+    mapLabel: 'A shared path',
+    nodes: [
+      { number: '01', title: 'Experience', text: 'What mentors have learned' },
+      { number: '02', title: 'Conversation', text: 'What students need now' },
+      { number: '03', title: 'Direction', text: 'What becomes possible next' },
+    ],
+    goal: 'More transparent. More humane. More collaborative.',
+    edition: 'TSINGHUA · LIFE SCIENCES · 2026',
+  },
+  zh: {
+    eyebrow: '志愿者发起的导师项目 · 2026 试点',
+    statement: '让经验成为桥梁，而不是门槛。',
+    lead: '由近期在国内外经历博士训练的校友，为生命科学与生物医学领域的清华学生提供一对一指导。',
+    mapLabel: '一条共同走出的路',
+    nodes: [
+      { number: '01', title: '经验', text: '导师一路所学' },
+      { number: '02', title: '对话', text: '学生此刻所需' },
+      { number: '03', title: '方向', text: '下一步的更多可能' },
+    ],
+    goal: '更透明 · 更有人情味 · 更具协作精神',
+    edition: '清华 · 生命科学 · 2026',
+  },
 })
 </script>
 
@@ -14,23 +38,33 @@ const copy = localized({
         <div class="hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">{{ copy.eyebrow }}</span>
-            <h1>BioMentor THU</h1>
+            <h1 aria-label="BioMentor THU">
+              <span>Bio</span><span>Mentor</span><span class="hero-title-thu">THU</span>
+            </h1>
+            <p class="hero-statement">{{ copy.statement }}</p>
             <p class="lead">
               {{ copy.lead }}
             </p>
-            <div class="hero-actions">
-              <RouterLink class="button button-primary" to="/mentees">{{ copy.mentee }}</RouterLink>
-              <RouterLink class="button button-secondary" to="/mentors">{{ copy.mentor }}</RouterLink>
-            </div>
           </div>
           <div class="hero-side">
-            <div class="stat-card">
-              <strong>{{ copy.focus }}</strong>
-              <p>{{ copy.focusText }}</p>
+            <div class="path-map">
+              <svg class="path-map-art" viewBox="0 0 360 360" aria-hidden="true">
+                <path d="M58 35 C 300 42, 54 145, 286 176 S 89 292, 302 328" />
+                <circle cx="58" cy="35" r="7" />
+                <circle cx="286" cy="176" r="7" />
+                <circle cx="302" cy="328" r="7" />
+              </svg>
+              <span class="path-map-label">{{ copy.mapLabel }}</span>
+              <div v-for="node in copy.nodes" :key="node.number" class="path-node">
+                <span class="path-node-number">{{ node.number }}</span>
+                <div>
+                  <strong>{{ node.title }}</strong>
+                  <p>{{ node.text }}</p>
+                </div>
+              </div>
+              <p class="path-map-goal">{{ copy.goal }}</p>
             </div>
-            <div class="stat-card hero-note">
-              <p>{{ copy.goal }}</p>
-            </div>
+            <span class="hero-edition">{{ copy.edition }}</span>
           </div>
         </div>
       </div>

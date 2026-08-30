@@ -37,8 +37,8 @@ const disclaimerItems = localized({ en: [
 ] })
 
 const copy = localized({
-  en: { eyebrow: '2026 Pilot Applications', title: 'Apply for the 2026 pilot.', description: 'Mentees can download the application form below. Prospective mentors are welcome to contact the program team directly by email.', how: 'Mentee Application', twoSteps: 'Complete your mentee application in two steps.', stepOne: 'Download and complete the form', stepOneText: 'Download the mentee application form and fill in all required information.', stepTwo: 'Submit by email', stepTwoPrefix: 'Send your completed application form to', downloads: 'Apply or Get in Touch', forms: 'Choose your next step', close: 'Close disclaimer', before: 'Before You Download', disclaimer: 'Application disclaimer', introBefore: 'Please review and confirm every statement before downloading the', introAfter: '.', cancel: 'Cancel', confirm: 'Confirm and Download' },
-  zh: { eyebrow: '2026 试点申请', title: '申请加入 2026 试点项目。', description: '学生可在下方下载申请表；有意加入的导师可直接通过电子邮件联系项目团队。', how: '学生申请', twoSteps: '分两步完成学生申请。', stepOne: '下载并填写申请表', stepOneText: '下载学生申请表，并填写全部必填信息。', stepTwo: '通过电子邮件提交', stepTwoPrefix: '请将填写完整的申请表发送至', downloads: '申请或联系我们', forms: '选择你的下一步', close: '关闭申请说明', before: '下载之前', disclaimer: '申请须知', introBefore: '下载', introAfter: '前，请阅读并确认以下全部声明。', cancel: '取消', confirm: '确认并下载' },
+  en: { eyebrow: '2026 Pilot Applications', title: 'Apply for the 2026 pilot.', highlight: 'Due to time and resource constraints, the 2026 pilot supports overseas PhD applications only, with a primary focus on programs in the United States.', description: 'Mentees can download the application form below, and prospective mentors can contact the program team directly by email.', how: 'Mentee Application', twoSteps: 'Complete your mentee application in two steps.', stepOne: 'Download and complete the form', stepOneText: 'Download the mentee application form and fill in all required information.', stepTwo: 'Submit by email', stepTwoPrefix: 'Send your completed application form to', downloads: 'Apply or Get in Touch', forms: 'Choose your next step', close: 'Close disclaimer', before: 'Before You Download', disclaimer: 'Application disclaimer', introBefore: 'Please review and confirm every statement before downloading the', introAfter: '.', cancel: 'Cancel', confirm: 'Confirm and Download' },
+  zh: { eyebrow: '2026 试点申请', title: '申请加入 2026 试点项目。', highlight: '由于时间和资源有限，2026 试点仅支持海外博士项目申请，并以美国博士项目为主。', description: '学生可在下方下载申请表；有意加入的导师可直接通过电子邮件联系项目团队。', how: '学生申请', twoSteps: '分两步完成学生申请。', stepOne: '下载并填写申请表', stepOneText: '下载学生申请表，并填写全部必填信息。', stepTwo: '通过电子邮件提交', stepTwoPrefix: '请将填写完整的申请表发送至', downloads: '申请或联系我们', forms: '选择你的下一步', close: '关闭申请说明', before: '下载之前', disclaimer: '申请须知', introBefore: '下载', introAfter: '前，请阅读并确认以下全部声明。', cancel: '取消', confirm: '确认并下载' },
 })
 
 const selectedForm = ref(null)
@@ -98,6 +98,7 @@ onBeforeUnmount(() => {
       :eyebrow="copy.eyebrow"
       :title="copy.title"
       :description="copy.description"
+      :highlight="copy.highlight"
     />
     <section class="application-process" aria-labelledby="application-process-title">
     <div class="page-shell">

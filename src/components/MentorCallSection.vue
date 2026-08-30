@@ -4,8 +4,8 @@ import { mentorCall } from '../content/siteContent'
 import { localized } from '../composables/useLanguage'
 
 const copy = localized({
-  en: { contribute: 'You may contribute by', flexibility: 'Designed for flexibility', action: 'Contact Us to Become a Mentor' },
-  zh: { contribute: '你可以这样参与', flexibility: '灵活参与，量力而行', action: '联系我们成为导师' },
+  en: { contribute: 'You may contribute by', flexibility: 'Designed for flexibility' },
+  zh: { contribute: '你可以这样参与', flexibility: '灵活参与，量力而行' },
 })
 </script>
 
@@ -24,14 +24,6 @@ const copy = localized({
           <article class="support-item">
             <h3>{{ copy.flexibility }}</h3>
             <p>{{ mentorCall.flexibility }}</p>
-            <div class="hero-actions compact-actions">
-              <a
-                class="button button-primary"
-                href="mailto:biomentorthu@gmail.com?subject=BioMentor%20THU%20-%20Prospective%20Mentor"
-              >
-                {{ copy.action }}
-              </a>
-            </div>
           </article>
         </div>
       </div>

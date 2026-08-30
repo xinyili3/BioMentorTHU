@@ -5,8 +5,8 @@ import { mentors } from '../content/siteContent'
 import { localized } from '../composables/useLanguage'
 
 const copy = localized({
-  en: { research: 'Research Interests', areas: 'Mentoring Areas', profile: 'View Profile', all: 'Meet All Mentors', close: 'Close mentor profile', profileEyebrow: 'Mentor Profile', share: 'What This Mentor Can Share', support: 'Available Support' },
-  zh: { research: '研究兴趣', areas: '指导领域', profile: '查看简介', all: '认识全部导师', close: '关闭导师简介', profileEyebrow: '导师简介', share: '这位导师可以分享', support: '可提供的支持' },
+  en: { research: 'Research Interests', areas: 'Mentoring Areas', profile: 'View Profile', all: 'Learn About Becoming a Mentor', close: 'Close mentor profile', profileEyebrow: 'Mentor Profile', share: 'What This Mentor Can Share', support: 'Available Support' },
+  zh: { research: '研究兴趣', areas: '指导领域', profile: '查看简介', all: '了解如何成为导师', close: '关闭导师简介', profileEyebrow: '导师简介', share: '这位导师可以分享', support: '可提供的支持' },
 })
 
 const selectedMentor = ref(null)
@@ -64,7 +64,7 @@ onBeforeUnmount(() => {
           </article>
         </div>
         <div class="hero-actions section-actions">
-          <RouterLink class="button button-secondary" to="/apply">{{ copy.all }}</RouterLink>
+          <RouterLink class="button button-secondary" to="/for-mentors">{{ copy.all }}</RouterLink>
         </div>
         <div class="operator-section">
           <SectionHeading v-bind="mentors.operatorHeading" />

@@ -6,11 +6,15 @@ import OverviewView from './views/OverviewView.vue'
 import MentorsView from './views/MentorsView.vue'
 import MenteesView from './views/MenteesView.vue'
 import ApplyView from './views/ApplyView.vue'
+import ForMentorsView from './views/ForMentorsView.vue'
+import FAQView from './views/FAQView.vue'
 
 const views = {
   '/': OverviewView,
   '/mentors': MentorsView,
   '/mentees': MenteesView,
+  '/for-mentors': ForMentorsView,
+  '/faq': FAQView,
   '/apply': ApplyView,
 }
 
