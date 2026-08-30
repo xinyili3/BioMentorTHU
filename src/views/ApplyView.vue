@@ -13,18 +13,14 @@ const forms = localized({ en: [
     downloadUrl: `${import.meta.env.BASE_URL}downloads/BioMentor%20THU_2026%20Mentee%20Application%20Form.pdf`,
     filename: 'BioMentor THU_2026 Mentee Application Form.pdf',
   },
-  {
-    id: 'mentor',
-    title: 'Mentor Application Form',
-    description: 'For alumni and researchers volunteering to support Tsinghua students.',
-    buttonLabel: 'Download Mentor Form',
-    buttonClass: 'button-secondary',
-    filename: 'mentor-application-form.pdf',
-  },
 ], zh: [
   { id: 'mentee', title: '学生申请表', description: '面向希望获得导师指导和申请建议的清华学生。', buttonLabel: '下载学生申请表', buttonClass: 'button-primary', downloadUrl: `${import.meta.env.BASE_URL}downloads/BioMentor%20THU_2026%20Mentee%20Application%20Form.pdf`, filename: 'BioMentor THU_2026 Mentee Application Form.pdf' },
-  { id: 'mentor', title: '导师申请表', description: '面向愿意志愿支持清华学生的校友与科研工作者。', buttonLabel: '下载导师申请表', buttonClass: 'button-secondary', filename: 'mentor-application-form.pdf' },
 ] })
+
+const mentorContact = localized({
+  en: { title: 'Interested in Becoming a Mentor?', description: 'Alumni and researchers who would like to support Tsinghua students can contact the program team directly by email.', buttonLabel: 'Email the Program Team' },
+  zh: { title: '有意成为导师？', description: '希望志愿支持清华学生的校友与科研工作者，可以直接通过电子邮件联系项目团队。', buttonLabel: '邮件联系项目团队' },
+})
 
 const disclaimerItems = localized({ en: [
   'I understand that this is a volunteer-led mentoring program and that submitting an application does not guarantee participation or a mentor match.',
@@ -41,8 +37,8 @@ const disclaimerItems = localized({ en: [
 ] })
 
 const copy = localized({
-  en: { eyebrow: 'Applications', title: 'Download an application form.', description: 'Choose the form for your role and download the PDF to begin your application.', how: 'How to Apply', twoSteps: 'Complete your application in two steps.', stepOne: 'Download and complete the form', stepOneText: 'Choose the application form for your role and fill in all required information.', stepTwo: 'Submit by email', stepTwoPrefix: 'Send your completed application form to', downloads: 'Downloads', forms: 'Application forms', close: 'Close disclaimer', before: 'Before You Download', disclaimer: 'Application disclaimer', introBefore: 'Please review and confirm every statement before downloading the', introAfter: '.', cancel: 'Cancel', confirm: 'Confirm and Download' },
-  zh: { eyebrow: '申请', title: '下载申请表。', description: '请选择与你身份对应的表格，下载 PDF 后即可开始填写申请。', how: '申请方式', twoSteps: '分两步完成申请。', stepOne: '下载并填写申请表', stepOneText: '选择与你身份对应的申请表，并填写全部必填信息。', stepTwo: '通过电子邮件提交', stepTwoPrefix: '请将填写完整的申请表发送至', downloads: '下载', forms: '申请表', close: '关闭申请说明', before: '下载之前', disclaimer: '申请须知', introBefore: '下载', introAfter: '前，请阅读并确认以下全部声明。', cancel: '取消', confirm: '确认并下载' },
+  en: { eyebrow: '2026 Pilot Applications', title: 'Apply for the 2026 pilot.', description: 'Mentees can download the application form below. Prospective mentors are welcome to contact the program team directly by email.', how: 'Mentee Application', twoSteps: 'Complete your mentee application in two steps.', stepOne: 'Download and complete the form', stepOneText: 'Download the mentee application form and fill in all required information.', stepTwo: 'Submit by email', stepTwoPrefix: 'Send your completed application form to', downloads: 'Apply or Get in Touch', forms: 'Choose your next step', close: 'Close disclaimer', before: 'Before You Download', disclaimer: 'Application disclaimer', introBefore: 'Please review and confirm every statement before downloading the', introAfter: '.', cancel: 'Cancel', confirm: 'Confirm and Download' },
+  zh: { eyebrow: '2026 试点申请', title: '申请加入 2026 试点项目。', description: '学生可在下方下载申请表；有意加入的导师可直接通过电子邮件联系项目团队。', how: '学生申请', twoSteps: '分两步完成学生申请。', stepOne: '下载并填写申请表', stepOneText: '下载学生申请表，并填写全部必填信息。', stepTwo: '通过电子邮件提交', stepTwoPrefix: '请将填写完整的申请表发送至', downloads: '申请或联系我们', forms: '选择你的下一步', close: '关闭申请说明', before: '下载之前', disclaimer: '申请须知', introBefore: '下载', introAfter: '前，请阅读并确认以下全部声明。', cancel: '取消', confirm: '确认并下载' },
 })
 
 const selectedForm = ref(null)
@@ -150,6 +146,18 @@ onBeforeUnmount(() => {
           >
             {{ form.buttonLabel }}
           </button>
+        </article>
+        <article class="download-card mentor-contact-card">
+          <div>
+            <h3>{{ mentorContact.title }}</h3>
+            <p>{{ mentorContact.description }}</p>
+          </div>
+          <a
+            class="button button-secondary"
+            href="mailto:biomentorthu@gmail.com?subject=BioMentor%20THU%20-%20Prospective%20Mentor"
+          >
+            {{ mentorContact.buttonLabel }}
+          </a>
         </article>
       </div>
     </div>

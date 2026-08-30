@@ -5,7 +5,7 @@ import { mentorProfiles } from './mentorProfiles'
 const en = {
   navigation: [
     { label: 'Program Overview', to: '/' }, { label: 'For Mentees', to: '/mentees' },
-    { label: 'Meet Our Team', to: '/mentors' }, { label: 'Apply', to: '/apply' },
+    { label: 'Meet Our Team', to: '/mentors' }, { label: 'Apply for the 2026 Pilot', to: '/apply' },
   ],
   mission: {
     heading: { eyebrow: 'Our Mission', title: 'Mentorship should not depend on who you happen to know.', description: 'Preparing for a PhD often involves questions that are difficult to answer from websites or application guides alone. This program brings students and alumni together through structured, personalized mentorship so that the path toward advanced research training feels clearer and more supportive.' },
@@ -62,7 +62,7 @@ const en = {
     heading: { eyebrow: 'Join the Community', title: 'One conversation can make the path a little clearer.', description: 'Whether you are preparing for the next stage of your scientific training or hoping to share what you have learned along the way, this program is designed to make those connections possible.' },
     options: [
       { title: 'Apply as a Mentee', description: 'For students seeking application guidance, perspective on research training, and more clarity about the path ahead.', label: 'Open Mentee Application', href: '#', buttonClass: 'button-primary' },
-      { title: 'Become a Mentor', description: 'For alumni and researchers who want to contribute thoughtful, experience-based guidance in a flexible volunteer role.', label: 'Open Mentor Sign-Up', href: '#', buttonClass: 'button-secondary' },
+      { title: 'Become a Mentor', description: 'For alumni and researchers who want to contribute thoughtful, experience-based guidance in a flexible volunteer role.', label: 'Email the Program Team', href: 'mailto:biomentorthu@gmail.com?subject=BioMentor%20THU%20-%20Prospective%20Mentor', buttonClass: 'button-secondary' },
     ],
   },
 }
@@ -70,7 +70,7 @@ const en = {
 const zh = {
   navigation: [
     { label: '项目概览', to: '/' }, { label: '学生专区', to: '/mentees' },
-    { label: '认识团队', to: '/mentors' }, { label: '申请', to: '/apply' },
+    { label: '认识团队', to: '/mentors' }, { label: '申请 2026 试点', to: '/apply' },
   ],
   mission: {
     heading: { eyebrow: '我们的使命', title: '获得导师指引，不应取决于你恰好认识谁。', description: '准备博士申请时，许多问题仅靠网站或申请指南很难找到答案。本项目通过有组织、个性化的导师交流连接清华学生与校友，让通往进阶科研训练的道路更清晰，也更有支持。' },
@@ -127,7 +127,7 @@ const zh = {
     heading: { eyebrow: '加入社群', title: '一次真诚的交流，就能让前路清晰一点。', description: '无论你正在为科研训练的下一阶段做准备，还是希望把一路所学分享给后来者，本项目都致力于让这样的连接成为可能。' },
     options: [
       { title: '申请成为学生', description: '面向希望获得申请指导、了解科研训练并更清晰规划未来道路的学生。', label: '打开学生申请', href: '#', buttonClass: 'button-primary' },
-      { title: '申请成为导师', description: '面向希望以灵活志愿形式分享亲身经验、为学生提供指导的校友与科研工作者。', label: '打开导师报名', href: '#', buttonClass: 'button-secondary' },
+      { title: '申请成为导师', description: '面向希望以灵活志愿形式分享亲身经验、为学生提供指导的校友与科研工作者。', label: '邮件联系项目团队', href: 'mailto:biomentorthu@gmail.com?subject=BioMentor%20THU%20-%20Prospective%20Mentor', buttonClass: 'button-secondary' },
     ],
   },
 }
