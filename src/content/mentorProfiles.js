@@ -2,7 +2,7 @@ import { computed } from 'vue'
 import { locale } from '../composables/useLanguage'
 
 const shared = [
-  { id: 'sihui-mao', photo: 'mentors/photos/test_mentorphoto.png' },
+  { id: 'sihui-mao', photo: 'mentors/photos/Image_2026-08-23_235400_783.jpg' },
   { id: 'xinyi-li', photo: 'mentors/photos/test_mentorphoto.png' },
   { id: 'tianhua-zhao', photo: 'mentors/photos/test_mentorphoto.png' },
   { id: 'jiayi-he', photo: 'mentors/photos/test_mentorphoto.png' },
