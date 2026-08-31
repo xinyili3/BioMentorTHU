@@ -110,7 +110,7 @@ operators: [
       { title: 'Become a Mentor', description: 'For alumni and researchers who want to contribute thoughtful, experience-based guidance in a flexible volunteer role.', label: 'Email the Program Team', href: 'mailto:biomentorthu@gmail.com?subject=BioMentor%20THU%20-%20Prospective%20Mentor', buttonClass: 'button-secondary' },
     ],
   },
-}
+};
 
 const zh = {
   navigation: [
