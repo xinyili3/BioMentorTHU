@@ -5,8 +5,8 @@ import { mentors } from '../content/siteContent'
 import { localized } from '../composables/useLanguage'
 
 const copy = localized({
-  en: { research: 'Research Interests', areas: 'Mentoring Areas', profile: 'View Profile', all: 'Learn About Becoming a Mentor', close: 'Close mentor profile', profileEyebrow: 'Mentor Profile', share: 'What This Mentor Can Share', support: 'Available Support' },
-  zh: { research: '研究兴趣', areas: '指导领域', profile: '查看简介', all: '了解如何成为导师', close: '关闭导师简介', profileEyebrow: '导师简介', share: '这位导师可以分享', support: '可提供的支持' },
+  en: { research: 'Field', areas: 'Area', intro: 'Self-Intro', profile: 'View Profile', all: 'Learn About Becoming a Mentor', close: 'Close mentor profile', profileEyebrow: 'Mentor Profile' },
+  zh: { research: '研究领域', areas: '指导范围', intro: '自我介绍', profile: '查看简介', all: '了解如何成为导师', close: '关闭导师简介', profileEyebrow: '导师简介' },
 })
 
 const selectedMentor = ref(null)
@@ -52,12 +52,20 @@ onBeforeUnmount(() => {
         <h3 class="people-group-title">{{ mentors.mentorLabel }}</h3>
         <div class="mentor-grid">
           <article v-for="mentor in mentors.people" :key="mentor.id" class="mentor-card">
-            <h3>{{ mentor.name }}</h3>
-            <p class="mentor-role">{{ mentor.role }}</p>
-            <strong>{{ copy.research }}</strong>
-            <p>{{ mentor.research }}</p>
-            <strong>{{ copy.areas }}</strong>
-            <p>{{ mentor.areas }}</p>
+            <header class="mentor-card-header">
+              <h3>{{ mentor.name }}</h3>
+              <p class="mentor-role">{{ mentor.role }}</p>
+            </header>
+            <div class="mentor-card-details">
+              <div>
+                <strong>{{ copy.research }}</strong>
+                <p>{{ mentor.research }}</p>
+              </div>
+              <div>
+                <strong>{{ copy.areas }}</strong>
+                <p>{{ mentor.areas }}</p>
+              </div>
+            </div>
             <button class="button button-secondary" type="button" @click="selectedMentor = mentor">
               {{ copy.profile }}
             </button>
@@ -113,7 +121,6 @@ onBeforeUnmount(() => {
           <span class="eyebrow">{{ copy.profileEyebrow }}</span>
           <h2 :id="`mentor-profile-${selectedMentor.id}`">{{ selectedMentor.name }}</h2>
           <p class="mentor-modal-role">{{ selectedMentor.role }}</p>
-          <p class="mentor-modal-bio">{{ selectedMentor.bio }}</p>
           <dl class="mentor-profile-details">
             <div>
               <dt>{{ copy.research }}</dt>
@@ -124,12 +131,11 @@ onBeforeUnmount(() => {
               <dd>{{ selectedMentor.areas }}</dd>
             </div>
             <div>
-              <dt>{{ copy.share }}</dt>
-              <dd>{{ selectedMentor.experience }}</dd>
-            </div>
-            <div>
-              <dt>{{ copy.support }}</dt>
-              <dd>{{ selectedMentor.availability }}</dd>
+              <dt>{{ copy.intro }}</dt>
+              <dd>
+                <p>{{ selectedMentor.bio }}</p>
+                <p v-if="selectedMentor.experience?.trim()">{{ selectedMentor.experience }}</p>
+              </dd>
             </div>
           </dl>
         </div>
