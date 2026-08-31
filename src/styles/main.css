@@ -565,9 +565,9 @@ main section { padding: 30px 0; }
 .mentor-modal {
   position: relative;
   display: grid;
-  grid-template-columns: 310px minmax(0, 1fr);
+  grid-template-columns: 250px minmax(0, 1fr);
   align-items: start;
-  width: min(940px, 100%);
+  width: min(1100px, 100%);
   max-height: min(760px, calc(100vh - 48px));
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.28);
@@ -597,16 +597,16 @@ main section { padding: 30px 0; }
 }
 .modal-close:hover, .modal-close:focus-visible { background: #fff; color: var(--brand); }
 .mentor-modal-photo {
-  width: 250px;
+  width: 220px;
   aspect-ratio: 1 / 1;
-  margin: 48px 0 42px 42px;
+  margin: 48px 0 42px 20px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #edf0ed;
 }
 .mentor-modal-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.mentor-modal-content { overflow-y: auto; padding: 48px 48px 42px; }
+.mentor-modal-content { overflow-y: auto; padding: 48px 48px 42px 24px; }
 .mentor-modal-content h2 {
   margin: 10px 56px 4px 0;
   font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
