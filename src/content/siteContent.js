@@ -56,11 +56,35 @@ const en = {
   mentors: {
     heading: { eyebrow: 'Our Community', title: 'Experience, guidance, and care from across our community.' },
     mentorLabel: 'Founding Mentors',
-    operatorHeading: { eyebrow: 'Program Team', title: 'Operations Team' },
-    operators: [
-      { id: 'program-lead', name: 'Team Member Name', role: 'Program Lead', description: 'Shapes the program vision, develops mentoring standards, and supports the long-term growth of the BioMentor THU community.' },
-      { id: 'program-coordinator', name: 'Team Member Name', role: 'Program Coordinator', description: 'Coordinates applications, mentor–mentee matching, participant communication, and the day-to-day details that make each mentoring connection possible.' },
-    ],
+    operatorHeading: {
+  eyebrow: 'Program Team',
+  title: 'Operations Team',
+  description:
+    'We work together to develop and operate BioMentor THU, turning shared ideas into action through close collaboration.'
+},
+  
+operators: [
+  {
+    id: 'sihui-mao',
+    name: 'Sihui Mao',
+    role: 'Founder'
+  },
+  {
+    id: 'xinyi-li',
+    name: 'Xinyi Li',
+    role: 'Founding Member'
+  },
+  {
+    id: 'tianhua-zhao',
+    name: 'Tianhua Zhao',
+    role: 'Founding Member'
+  },
+  {
+    id: 'jiayi-he',
+    name: 'Jiayi He',
+    role: 'Founding Member'
+  }
+],
   },
   principles: {
     heading: { eyebrow: 'Our Mentoring Principles', title: "Guide, don't write." },

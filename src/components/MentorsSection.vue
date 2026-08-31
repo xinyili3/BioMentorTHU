@@ -77,12 +77,19 @@ onBeforeUnmount(() => {
         <div class="operator-section">
           <SectionHeading v-bind="mentors.operatorHeading" />
           <div class="operator-grid">
-            <article v-for="operator in mentors.operators" :key="operator.id" class="operator-card">
-              <div class="operator-monogram" aria-hidden="true">{{ operator.name.charAt(0) }}</div>
-              <div>
-                <h3>{{ operator.name }}</h3>
+            <article
+              v-for="operator in mentors.operators"
+              :key="operator.id"
+              class="operator-card"
+              :class="{ 'operator-card--lead': operator.id === 'sihui-mao' }"
+            >
+              <div class="operator-card-top" aria-hidden="true">
+                <span class="operator-monogram">{{ operator.name.charAt(0) }}</span>
+              </div>
+              <div class="operator-card-copy">
                 <p class="operator-role">{{ operator.role }}</p>
-                <p>{{ operator.description }}</p>
+                <h3>{{ operator.name }}</h3>
+                <p v-if="operator.description" class="operator-description">{{ operator.description }}</p>
               </div>
             </article>
           </div>
