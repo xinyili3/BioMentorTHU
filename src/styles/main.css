@@ -567,7 +567,7 @@ main section { padding: 30px 0; }
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
   align-items: start;
-  width: min(1100px, 100%);
+  width: min(950px, 100%);
   max-height: min(760px, calc(100vh - 48px));
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.28);
