@@ -82,7 +82,7 @@ onBeforeUnmount(() => {
               <div>
                 <h3>{{ operator.name }}</h3>
                 <p class="operator-role">{{ operator.role }}</p>
-                <p>{{ operator.description }}</p>
+               <p v-if="operator.description">{{ operator.description }}</p>
               </div>
             </article>
           </div>
