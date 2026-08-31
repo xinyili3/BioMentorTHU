@@ -65,22 +65,22 @@ const en = {
   
 operators: [
   {
-    id: 'sihui-mao',
+    id: 'founding-member-1',
     name: 'Sihui Mao',
     role: 'Founder'
   },
   {
-    id: 'xinyi-li',
+    id: 'founding-member-2',
     name: 'Xinyi Li',
     role: 'Founding Member'
   },
   {
-    id: 'tianhua-zhao',
+    id: 'founding-member-3',
     name: 'Tianhua Zhao',
     role: 'Founding Member'
   },
   {
-    id: 'jiayi-he',
+    id: 'founding-member-4',
     name: 'Jiayi He',
     role: 'Founding Member'
   }
@@ -166,12 +166,35 @@ const zh = {
   mentors: {
     heading: { eyebrow: '我们的社群', title: '汇聚社群中的经验、指引与关怀。' },
     mentorLabel: '创始导师',
-    operatorHeading: { eyebrow: '项目团队', title: '运营团队' },
-    operators: [
-      { id: 'program-lead', name: '团队成员姓名', role: '项目负责人', description: '负责规划项目愿景、制定导师指导规范，并支持 BioMentor THU 社群的长期发展。' },
-      { id: 'program-coordinator', name: '团队成员姓名', role: '项目协调人', description: '负责申请管理、导师与学生匹配、参与者沟通，以及促成每一次导师连接的日常运营工作。' },
-    ],
+operatorHeading: {
+    eyebrow: '项目团队',
+    title: '运营团队',
+    description: '我们共同参与 BioMentor THU 的建设与运营，通过紧密协作，将共同的想法付诸实践。'
   },
+
+  operators: [
+    {
+      id: 'founding-member-1',
+      name: '毛斯慧',
+      role: '发起人'
+    },
+    {
+      id: 'founding-member-2',
+      name: '李昕仪',
+      role: '创始成员'
+    },
+    {
+      id: 'founding-member-3',
+      name: '赵天骅',
+      role: '创始成员'
+    },
+    {
+      id: 'founding-member-4',
+      name: '何嘉艺',
+      role: '创始成员'
+    },
+  ],
+},
   principles: {
     heading: { eyebrow: '导师指导原则', title: '引导，而非代写。' },
     items: [
