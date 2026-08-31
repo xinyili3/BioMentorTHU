@@ -83,9 +83,6 @@ onBeforeUnmount(() => {
               class="operator-card"
               :class="{ 'operator-card--lead': operator.id === 'sihui-mao' }"
             >
-              <div class="operator-card-top" aria-hidden="true">
-                <span class="operator-monogram">{{ operator.name.charAt(0) }}</span>
-              </div>
               <div class="operator-card-copy">
                 <p class="operator-role">{{ operator.role }}</p>
                 <h3>{{ operator.name }}</h3>

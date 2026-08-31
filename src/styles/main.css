@@ -479,66 +479,23 @@ main section { padding: 30px 0; }
   padding-top: 44px;
   border-top: 1px solid var(--line);
 }
-.operator-section .section-heading { max-width: 760px; margin-bottom: 28px; }
+.operator-section .section-heading { max-width: 760px; margin-bottom: 34px; }
 .operator-section .section-heading h2 { font-size: clamp(1.7rem, 3vw, 2.45rem); }
-.operator-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.operator-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
 .operator-card {
-  position: relative;
-  display: flex;
-  min-height: 210px;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 34px;
-  overflow: hidden;
-  padding: 22px;
-  border: 1px solid rgba(24, 38, 31, 0.1);
-  border-radius: 18px;
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.94), rgba(248, 245, 237, 0.72));
-  box-shadow: 0 12px 30px rgba(24, 38, 31, 0.05);
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  padding: 20px 0 6px;
+  border-top: 2px solid rgba(24, 38, 31, 0.14);
 }
-.operator-card::after {
-  content: "";
-  position: absolute;
-  right: -30px;
-  bottom: -54px;
-  width: 112px;
-  height: 112px;
-  border: 1px solid rgba(201, 139, 74, 0.2);
-  border-radius: 50%;
-}
-.operator-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(15, 91, 69, 0.22);
-  box-shadow: 0 18px 38px rgba(24, 38, 31, 0.09);
-}
-.operator-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.operator-monogram {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(15, 91, 69, 0.1);
-  color: var(--brand);
-  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-.operator-card-copy { position: relative; z-index: 1; }
 .operator-card h3 {
-  margin: 7px 0 0;
+  margin: 9px 0 0;
   font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  font-size: clamp(1.28rem, 1.8vw, 1.55rem);
-  line-height: 1.15;
+  font-size: clamp(1.4rem, 2vw, 1.7rem);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
 }
 .operator-card p { margin: 0; color: var(--muted); line-height: 1.65; }
 .operator-card .operator-role {
-  color: var(--brand);
+  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -546,15 +503,9 @@ main section { padding: 30px 0; }
 }
 .operator-description { margin-top: 12px !important; font-size: 0.9rem; }
 .operator-card--lead {
-  border-color: var(--brand);
-  background: linear-gradient(145deg, #0f5b45, #174f40);
-  box-shadow: 0 16px 36px rgba(15, 91, 69, 0.2);
-  color: #fffaf3;
+  border-color: var(--accent);
 }
-.operator-card--lead::after { border-color: rgba(255, 255, 255, 0.14); }
-.operator-card--lead .operator-monogram { background: rgba(255, 255, 255, 0.12); color: #fffaf3; }
-.operator-card--lead .operator-role { color: #efc28c; }
-.operator-card--lead .operator-description { color: rgba(255, 250, 243, 0.72); }
+.operator-card--lead .operator-role { color: var(--brand); }
 .mentor-experience-card ul { display: grid; gap: 10px; }
 .mentor-benefits-card {
   border-color: rgba(201, 139, 74, 0.2);
@@ -1066,7 +1017,7 @@ html[lang="zh-CN"] .editorial-link-title { font-family: "Noto Serif SC", "Songti
   .disclaimer-actions { flex-direction: column-reverse; }
   .disclaimer-actions .button { width: 100%; }
   .operator-grid { grid-template-columns: 1fr; }
-  .operator-card { min-height: 172px; gap: 24px; padding: 20px; }
+  .operator-card { padding: 18px 0 4px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
