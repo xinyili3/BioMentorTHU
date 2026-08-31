@@ -565,7 +565,7 @@ main section { padding: 30px 0; }
 .mentor-modal {
   position: relative;
   display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
+  grid-template-columns: 310px minmax(0, 1fr);
   align-items: start;
   width: min(940px, 100%);
   max-height: min(760px, calc(100vh - 48px));
