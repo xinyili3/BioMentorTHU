@@ -5,7 +5,7 @@ const shared = [
   { id: 'tianhua-zhao', photo: 'mentors/photos/test_mentorphoto.png' },
   { id: 'jiayi-he', photo: 'mentors/photos/test_mentorphoto.png' },
   { id: 'sihui-mao', photo: 'mentors/photos/test_mentorphoto.png' },
-  { id: 'xinyi-li', photo: 'mentors/photos/test_mentorphoto.png' },
+  { id: 'xinyi-li', photo: 'mentors/photos/Xinyi_Li.jpg' },
 ]
 
 const profiles = {

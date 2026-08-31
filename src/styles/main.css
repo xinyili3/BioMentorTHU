@@ -598,7 +598,7 @@ main section { padding: 30px 0; }
 .modal-close:hover, .modal-close:focus-visible { background: #fff; color: var(--brand); }
 .mentor-modal-photo {
   width: 188px;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   margin: 48px 0 42px 42px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -999,7 +999,7 @@ html[lang="zh-CN"] .editorial-link-title { font-family: "Noto Serif SC", "Songti
   .mentor-modal-backdrop { align-items: end; padding: 12px; }
   .disclaimer-modal-backdrop { align-items: end; padding: 12px; }
   .mentor-modal { grid-template-columns: 1fr; max-height: calc(100vh - 24px); overflow-y: auto; }
-  .mentor-modal-photo { width: 120px; aspect-ratio: 3 / 4; margin: 24px 0 0 22px; }
+  .mentor-modal-photo { width: 120px; aspect-ratio: 1 / 1; margin: 24px 0 0 22px; }
   .mentor-modal-photo img { object-position: center 20%; }
   .mentor-modal-content { overflow: visible; padding: 28px 22px 24px; }
   .mentor-modal-content h2 { margin-right: 44px; }
