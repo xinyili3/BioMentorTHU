@@ -598,7 +598,7 @@ main section { padding: 30px 0; }
 .modal-close:hover, .modal-close:focus-visible { background: #fff; color: var(--brand); }
 .mentor-modal-photo {
   width: 188px;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   margin: 48px 0 42px 42px;
   overflow: hidden;
   border: 1px solid var(--line);
