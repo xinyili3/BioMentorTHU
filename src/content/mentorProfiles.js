@@ -4,7 +4,7 @@ import { locale } from '../composables/useLanguage'
 const shared = [
   { id: 'sihui-mao', photo: 'mentors/photos/Sihui_Mao.jpg' },
   { id: 'xinyi-li', photo: 'mentors/photos/Xinyi_Li.jpg' },
-  { id: 'tianhua-zhao', photo: 'mentors/photos/test_mentorphoto.png' },
+  { id: 'tianhua-zhao', photo: 'mentors/photos/Tianhua_Zhao.jpg' },
   { id: 'jiayi-he', photo: 'mentors/photos/Jiayi_He.jpg' },
 ]
 
