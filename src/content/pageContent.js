@@ -39,7 +39,7 @@ export const heroContent = localized({
   },
   zh: {
     eyebrow: '由清华校友志愿发起的导师项目 · 2026 试点',
-    statement: '让经验成为桥梁，而不是门槛。',
+    statement: '让经验成为桥梁，助推你的博士申请。。',
     lead: '我们希望通过BioMentor项目，连接正在生物医药领域探索的清华本科生，与如今正在国内外继续科研和深造的学长学姐，通过一对一的交流与陪伴，解决你前进道路上的困惑。',
     mapLabel: '让曾经走过这条路的人，陪你走向自己的远方。',
     nodes: [
@@ -47,7 +47,7 @@ export const heroContent = localized({
       { number: '02', title: '对话', text: '学生此刻所需' },
       { number: '03', title: '方向', text: '下一步的更多可能' },
     ],
-    goal: '我们希望通往科研与博士训练的道路，少一分信息差，多一分真诚；少一点孤独摸索，多一点彼此照亮。',
+    goal: '让通往科研与博士训练的道路，少一分信息差，多一分真诚；少一点孤独摸索，多一点彼此照亮。',
     edition: '清华 · 生命科学 · 2026',
   },
 })
@@ -68,11 +68,11 @@ export const conceptContent = localized({
     eyebrow: '项目理念',
     watermark: '共享',
     title: '经验在分享中走得更远。',
-    description: 'BioMentor THU 将个人经历转化为后来者可以参考的道路——不是给出唯一答案，而是为更好的问题和更充分的选择创造空间。',
+    description: 'BioMentor THU 将个人经历转化为后来者可以参考的道路。绝非给出唯一答案，而是为更好的问题和更充分的选择创造空间。',
     stages: [
       { number: '01', title: '亲身经验', text: '导师分享来自科研、申请与博士生活的真实经验。' },
-      { number: '02', title: '专注对话', text: '一对一交流把笼统的不确定，转化为可以具体讨论的问题。' },
-      { number: '03', title: '自主方向', text: '学生带着更清晰的思考、更扎实的材料，以及属于自己的决定继续前行。' },
+      { number: '02', title: '专注对话', text: '一对一交流把笼统的困惑，转化为可以具体改进的方向。' },
+      { number: '03', title: '自主方向', text: '学生带着更清晰的思考、更扎实的信息，以及属于自己的决定继续前行。' },
     ],
   },
 })
@@ -92,14 +92,14 @@ export const overviewContent = localized({
   },
   zh: {
     missionEyebrow: '为什么创立 BioMentor THU',
-    missionTitle: '可靠的经验和指导，不应取决于你恰好认识谁。',
+    missionTitle: '一手的经验和真诚的指导，不应取决于“你恰好认识谁”。',
     missionText: '我们把校友的亲身经验，转化为清华学生真正能够获得的指导。',
     items: [
-      { number: '01', label: '学生专区', detail: '支持内容、实用资源与导师流程', to: '/mentees' },
+      { number: '01', label: '学生专区', detail: '学生支持、实用资源与指导流程', to: '/mentees' },
       { number: '02', label: '导师专区', detail: '导师责任、收获与参与方式', to: '/for-mentors' },
       { number: '03', label: '认识团队', detail: '创始导师与项目运营团队', to: '/mentors' },
-      { number: '04', label: '常见问题', detail: '参与资格、导师匹配、指导边界与常见疑问', to: '/faq' },
-      { number: '05', label: '2026 试点', detail: '参与资格、申请与下一步', to: '/apply' },
+      { number: '04', label: '常见问题', detail: '参与资格、导师匹配、指导内容与常见疑问', to: '/faq' },
+      { number: '05', label: '2026 试点', detail: '参与资格、如何申请与下一步', to: '/apply' },
     ],
   },
 })
@@ -115,10 +115,10 @@ export const menteesPageContent = localized({
     ],
   },
   zh: {
-    eyebrow: '学生专区', title: '为下一步获得实际帮助。', description: '快速了解 2026 试点面向谁、能够提供什么支持，以及如何参与。',
+    eyebrow: '学生专区', title: '如何获取帮助', description: '快速了解 2026 的试点对象、能够获得哪些支持，以及如何参与。',
     linksEyebrow: '实用入口', linksTitle: '进一步了解项目，或开始申请。',
     links: [
-      { title: '认识我们的团队', description: '查看导师背景与可以提供的支持领域。', label: '查看导师', to: '/mentors' },
+      { title: '认识我们的团队', description: '查看导师背景与指导领域。', label: '查看导师', to: '/mentors' },
       { title: '阅读常见问题', description: '了解参与资格、匹配方式、保密要求等细节。', label: '查看 FAQ', to: '/faq' },
       { title: '申请 2026 试点', description: '下载学生申请表并查看提交说明。', label: '开始申请', to: '/apply', primary: true },
     ],
@@ -172,31 +172,31 @@ export const mentorPageContent = localized({
     ],
   },
   zh: {
-    intro: { eyebrow: '导师专区', title: '分享一路所学，也在指导中继续成长。', description: '帮助正在准备研究生申请的学弟学妹，同时建立有意义的连接，积累真实的导师指导经验。' },
-    fitHeading: { eyebrow: '参与对象与方式', title: '在你的经验最有价值之处提供帮助。' },
-    eligibilityLabel: '谁可以成为导师？',
-    eligibility: '具有清华背景，来自生命科学、生物医学及相关领域的在读博士生、近期博士毕业生和博士后研究人员。',
+    intro: { eyebrow: '导师专区', title: '分享你的一路所学，也在陪伴与指导中共同成长。', description: '帮助正在准备研究生申请的学弟学妹，积累真实的教学指导经验。' },
+    fitHeading: { eyebrow: '参与方式', title: '在你的过往经验持续发光发热' },
+    eligibilityLabel: '谁可以成为项目导师？',
+    eligibility: '清华校友，来自生命科学、生物医学及相关领域的在读博士生、近期博士毕业生和博士后研究人员。',
     contributions: [
-      { number: '01', title: '申请规划', description: '帮助学生思考研究匹配度、学校与项目选择。' },
-      { number: '02', title: '材料反馈', description: '反馈简历、学术目的陈述或个人陈述。' },
-      { number: '03', title: '面试练习', description: '开展模拟面试，并给出有针对性的建议。' },
+      { number: '01', title: '申请规划', description: '引导学生思考研究兴趣、学校与项目选择。' },
+      { number: '02', title: '材料反馈', description: '针对简历、SOP或个人陈述提供反馈和建议。' },
+      { number: '03', title: '面试练习', description: '开展模拟面试，并给出针对性的指导。' },
       { number: '04', title: '博士视角', description: '坦诚分享科研训练与博士生活的亲身经验。' },
     ],
-    benefitsHeading: { eyebrow: '你可以获得什么', title: '回馈、连接，也继续成长。' },
+    benefitsHeading: { eyebrow: '你可以获得什么', title: '回馈、连接，以及教学相长。' },
     benefits: [
-      { number: '01', title: '分享亲身经验', description: '把申请、科研与博士生活中的经验，转化为对正在面对这些选择的学生有用的建议。' },
-      { number: '02', title: '帮助学弟学妹', description: '帮助年轻的清华学生获得更充分的信息，更有信心地走向研究生阶段。' },
-      { number: '03', title: '建立有意义的连接', description: '认识更广泛的清华生命科学学生、校友与科研人员。' },
-      { number: '04', title: '积累导师指导经验', description: '练习给予反馈、认真倾听、管理预期，并引导有成效的交流。' },
+      { number: '01', title: '分享亲身经验', description: '把申请、科研与博士生活中的经验，总结为对学弟学妹们的建议。' },
+      { number: '02', title: '帮助学弟学妹', description: '帮助下一代的清华学子获得更充分的信息，让他们更有信心地走向研究生阶段。' },
+      { number: '03', title: '建立有意义的连接', description: '认识更广泛的清华学生、校友与科研人员。' },
+      { number: '04', title: '积累教学指导经验', description: '练习给予反馈、认真倾听、管理预期，并引导有成效的交流。' },
     ],
     expectationsHeading: { eyebrow: '明确预期', title: '用心指导，守好边界。' },
-    responsibilities: ['分享个人经验，但不把它当作唯一正确答案。', '提供反馈，但不代替学生撰写申请材料。', '明确自己的可用时间，并按双方约定及时沟通。', '保护学生的个人信息与申请材料。'],
+    responsibilities: ['分享个人经验，但不把它当作问题的唯一正解。', '提供反馈，但不代替学生自己思考和撰写申请材料。', '明确自己的可用时间，并按双方约定及时沟通。', '保护学生的个人信息与申请材料。'],
     commitmentTitle: '灵活的时间投入',
-    commitment: '你可以指导一名学生、反馈一项申请材料，或开展一次模拟面试。我们只会匹配符合你专长和可用时间的需求。',
+    commitment: '你可以指导一名学生、反馈一项申请材料，或开展一次模拟面试。我们会匹配符合你专长和可投入时间的需求。',
     processHeading: { eyebrow: '如何加入', title: '只需三个步骤。' },
     steps: [
       { number: '01', title: '联系我们', description: '从 2026 试点页面向项目团队发送邮件。' },
-      { number: '02', title: '说明参与范围', description: '告诉我们你的专长、希望支持的领域与可用时间。' },
+      { number: '02', title: '说明参与范围', description: '告诉我们你的专长、希望支持的领域与时间安排。' },
       { number: '03', title: '接受匹配', description: '当学生需求与你可以提供的支持相符时，我们会联系你。' },
     ],
     linksHeading: { eyebrow: '实用入口', title: '进一步了解或参与项目。' },
@@ -230,7 +230,7 @@ export const faqPageContent = localized({
     contactEyebrow: 'Still Have a Question?', contactTitle: 'We are happy to help.', contactText: 'Contact the BioMentor THU program team directly by email.', contactButton: 'Email the Program Team',
   },
   zh: {
-    intro: { eyebrow: '常见问题', title: '提出问题，也是前行的一部分。', description: '了解参与资格、导师匹配、指导边界、申请方式和 2026 试点项目的实用信息。' },
+    intro: { eyebrow: '常见问题', title: '提出问题，是前行路上的第一步。', description: '了解参与资格、导师匹配、指导内容、申请方式和 2026 试点项目的实用信息。' },
     groups: [
       { title: '参与与匹配', items: [
         { question: '哪些学生可以申请？', answer: '由于时间和资源有限，2026 试点仅面向生命科学、生物医学及相关领域，正在本申请季申请海外博士项目的清华学生，并以美国博士项目为主。' },
@@ -242,7 +242,7 @@ export const faqPageContent = localized({
       { title: '导师指导与申请', items: [
         { question: '学生可以获得哪些支持？', answer: '支持内容可能包括博士规划、研究方向、学校和项目选择、简历或陈述反馈、面试准备，以及有关科研训练的坦诚交流。' },
         { question: '导师会帮我修改或撰写申请材料吗？', answer: '导师可以提供反馈，帮助你完善思考与表达，但不会代写申请材料。所有提交的内容都必须是学生本人的工作。' },
-        { question: '导师指导需要投入多少时间？', answer: '参与方式灵活。导师可以根据专长与时间，指导一名学生、反馈一项申请材料，或开展一次模拟面试。' },
+        { question: '导师指导需要投入多少时间？', answer: '参与方式灵活。导师可以根据专长与时间，从指导一名学生、反馈一项申请材料，或开展一次模拟面试开始。' },
         { question: '我的申请材料会被保密吗？', answer: '会。导师和学生都应保护项目交流中分享的个人信息与申请材料。' },
         { question: '有意成为导师的人如何联系项目？', answer: '请前往 2026 试点申请页面，点击导师联系按钮，直接通过电子邮件联系项目团队。' },
       ] },
