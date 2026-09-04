@@ -39,7 +39,7 @@ export const heroContent = localized({
   },
   zh: {
     eyebrow: '由清华校友志愿发起的导师项目 · 2026 试点',
-    statement: '让经验成为桥梁，助推你的博士申请。。',
+    statement: '让经验成为桥梁，助推你的博士申请。',
     lead: '我们希望通过BioMentor项目，连接正在生物医药领域探索的清华本科生，与如今正在国内外继续科研和深造的学长学姐，通过一对一的交流与陪伴，解决你前进道路上的困惑。',
     mapLabel: '让曾经走过这条路的人，陪你走向自己的远方。',
     nodes: [
@@ -173,7 +173,7 @@ export const mentorPageContent = localized({
   },
   zh: {
     intro: { eyebrow: '导师专区', title: '分享你的一路所学，也在陪伴与指导中共同成长。', description: '帮助正在准备研究生申请的学弟学妹，积累真实的教学指导经验。' },
-    fitHeading: { eyebrow: '参与方式', title: '在你的过往经验持续发光发热' },
+    fitHeading: { eyebrow: '参与方式', title: '让你的过往经验持续发光发热' },
     eligibilityLabel: '谁可以成为项目导师？',
     eligibility: '清华校友，来自生命科学、生物医学及相关领域的在读博士生、近期博士毕业生和博士后研究人员。',
     contributions: [
