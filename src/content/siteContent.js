@@ -134,14 +134,14 @@ const zh = {
     ],
   },
   menteeAdvantages: {
-    heading: { eyebrow: '为什么选择 BioMentor THU', title: '基于亲身经验，而不是凭空猜测。' },
+    heading: { eyebrow: '为什么选择 BioMentor THU', title: '一手的经验和真诚的指导，不应取决于“你恰好认识谁”。' },
     pilotLabel: '2026 试点对象',
     pilotText: '由于时间和资源有限，2026 试点仅面向生命科学、生物医学及相关领域，正在本申请季申请海外博士项目的清华学生，并以美国博士项目为主。',
     items: [
-      { number: '01', title: '清华校友的切身视角', description: '导师既理解你的起点，也亲身走过通往博士训练的道路。' },
+      { number: '01', title: '清华校友的切身视角', description: '导师既理解你的起点，也亲身走过类似的道路。' },
       { number: '02', title: '围绕实际需求匹配', description: '每次匹配都综合考虑研究兴趣、具体支持需求与双方时间。' },
-      { number: '03', title: '为不同任务寻找合适导师', description: '项目选择、申请材料和面试可分别由具备相应经验的导师支持。' },
-      { number: '04', title: '坦诚且有人情味的指导', description: '获得实用视角，而不是千篇一律的答案或只能照搬的单一路径。' },
+      { number: '03', title: '为不同目标寻找合适导师', description: '项目选择、申请材料和面试可分别由具备相应经验的导师支持。' },
+      { number: '04', title: '真诚且温暖的指导', description: '获得最实用、可操作的建议，而不是千篇一律的答案或只能照搬的单一路径。' },
     ],
   },
   pilot: {
