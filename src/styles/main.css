@@ -464,8 +464,24 @@ main section { padding: 30px 0; }
 .mentor-card-details > div { padding: 17px 0; border-bottom: 1px solid var(--line); }
 .mentor-card strong { display: block; margin: 0 0 3px; color: var(--brand); font-size: 0.84rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .mentor-card-details p { font-size: 0.96rem; line-height: 1.5; }
-.mentor-card .button { align-self: flex-start; margin-top: auto; border: 0; border-bottom: 1px solid currentColor; border-radius: 0; padding: 4px 0 3px; background: transparent; }
+.mentor-card .button {
+  align-self: flex-start;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 0 17px;
+  border: 1px solid rgba(15, 91, 69, 0.28);
+  border-radius: 999px;
+  background: rgba(15, 91, 69, 0.08);
+  color: var(--brand);
+  box-shadow: 0 5px 14px rgba(15, 91, 69, 0.08);
+}
 .mentor-card .button::after { content: "\2192"; margin-left: 9px; transition: transform 180ms ease; }
+.mentor-card .button:hover, .mentor-card .button:focus-visible {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fffaf3;
+  box-shadow: 0 8px 18px rgba(15, 91, 69, 0.18);
+}
 .mentor-card .button:hover::after, .mentor-card .button:focus-visible::after { display: inline-block; transform: translateX(4px); }
 .people-group-title {
   margin: 0 0 16px;
