@@ -1,12 +1,10 @@
 <script setup>
 import SectionHeading from './SectionHeading.vue'
 import { pilot } from '../content/siteContent'
-import { localized } from '../composables/useLanguage'
+import { computed } from 'vue'
+import { componentLabels } from '../content/pageContent'
 
-const copy = localized({
-  en: { focus: "This year's mentoring focus", why: 'Why a Pilot?', action: 'Learn About the 2026 Pilot' },
-  zh: { focus: '本年度导师指导重点', why: '为什么从试点开始？', action: '了解 2026 试点项目' },
-})
+const copy = computed(() => componentLabels.value.pilot)
 </script>
 
 <template>

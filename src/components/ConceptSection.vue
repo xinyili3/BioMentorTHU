@@ -1,30 +1,5 @@
 <script setup>
-import { localized } from '../composables/useLanguage'
-
-const copy = localized({
-  en: {
-    eyebrow: 'The Idea',
-    watermark: 'Share',
-    title: 'Knowledge travels further when it is shared.',
-    description: 'BioMentor THU turns individual experience into a path others can follow—not by prescribing one answer, but by making room for better questions and more informed choices.',
-    stages: [
-      { number: '01', title: 'Lived experience', text: 'Mentors bring honest lessons from research, applications, and PhD life.' },
-      { number: '02', title: 'Focused conversation', text: 'One-on-one dialogue turns broad uncertainty into questions that can be addressed.' },
-      { number: '03', title: 'Informed direction', text: 'Mentees leave with clearer thinking, stronger materials, and decisions they own.' },
-    ],
-  },
-  zh: {
-    eyebrow: '项目理念',
-    watermark: '共享',
-    title: '经验在分享中走得更远。',
-    description: 'BioMentor THU 将个人经历转化为后来者可以参考的道路——不是给出唯一答案，而是为更好的问题和更充分的选择创造空间。',
-    stages: [
-      { number: '01', title: '亲身经验', text: '导师分享来自科研、申请与博士生活的真实经验。' },
-      { number: '02', title: '专注对话', text: '一对一交流把笼统的不确定，转化为可以具体讨论的问题。' },
-      { number: '03', title: '自主方向', text: '学生带着更清晰的思考、更扎实的材料，以及属于自己的决定继续前行。' },
-    ],
-  },
-})
+import { conceptContent as copy } from '../content/pageContent'
 </script>
 
 <template>

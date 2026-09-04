@@ -1,13 +1,10 @@
 <script setup>
-import { nextTick, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import SectionHeading from './SectionHeading.vue'
 import { mentors } from '../content/siteContent'
-import { localized } from '../composables/useLanguage'
+import { componentLabels } from '../content/pageContent'
 
-const copy = localized({
-  en: { research: 'Field', areas: 'Area', intro: 'Self-Intro', profile: 'View Profile', all: 'Learn About Becoming a Mentor', close: 'Close mentor profile', profileEyebrow: 'Mentor Profile' },
-  zh: { research: '研究领域', areas: '指导范围', intro: '自我介绍', profile: '查看简介', all: '了解如何成为导师', close: '关闭导师简介', profileEyebrow: '导师简介' },
-})
+const copy = computed(() => componentLabels.value.mentors)
 
 const selectedMentor = ref(null)
 const closeButton = ref(null)

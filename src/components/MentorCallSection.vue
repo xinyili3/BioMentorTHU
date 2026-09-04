@@ -1,12 +1,10 @@
 <script setup>
+import { computed } from 'vue'
 import SectionHeading from './SectionHeading.vue'
 import { mentorCall } from '../content/siteContent'
-import { localized } from '../composables/useLanguage'
+import { componentLabels } from '../content/pageContent'
 
-const copy = localized({
-  en: { contribute: 'You may contribute by', flexibility: 'Designed for flexibility' },
-  zh: { contribute: '你可以这样参与', flexibility: '灵活参与，量力而行' },
-})
+const copy = computed(() => componentLabels.value.mentorCall)
 </script>
 
 <template>

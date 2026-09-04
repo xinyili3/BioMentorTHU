@@ -1,4 +1,5 @@
 import { computed, ref, watch } from 'vue'
+import { documentTitles } from '../content/metadata'
 
 const savedLocale = window.localStorage.getItem('biomentor-locale')
 export const locale = ref(savedLocale === 'zh' ? 'zh' : 'en')
@@ -18,7 +19,7 @@ watch(
   (value) => {
     window.localStorage.setItem('biomentor-locale', value)
     document.documentElement.lang = value === 'zh' ? 'zh-CN' : 'en'
-    document.title = value === 'zh' ? 'BioMentor THU｜清华生物学科朋辈导师计划' : 'BioMentor THU'
+    document.title = documentTitles[value]
   },
   { immediate: true },
 )
