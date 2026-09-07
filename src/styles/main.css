@@ -616,15 +616,17 @@ position: relative;
 }
 .modal-close:hover, .modal-close:focus-visible { background: #fff; color: var(--brand); }
 .mentor-modal-photo {
+  position: relative;
   width: 220px;
   aspect-ratio: 1 / 1;
+  min-height: 0;
   margin: 48px 0 42px 20px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #edf0ed;
 }
-.mentor-modal-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.mentor-modal-photo img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .mentor-modal-content {   min-height: 0;
   max-height: calc(100dvh - 48px);
   overflow-y: auto;
