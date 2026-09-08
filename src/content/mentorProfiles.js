@@ -1,14 +1,17 @@
 import { computed } from 'vue'
 import { locale } from '../composables/useLanguage'
 
+// 修改 order 即可调整显示顺序，按数字从小到大排序（相同编号保持原顺序）。
+// 此数组与下方中英文资料按位置对应，请勿直接移动条目。
 const shared = [
-  { id: 'sihui-mao', photo: 'mentors/photos/Sihui_Mao.jpg' },
-  { id: 'xinyi-li', photo: 'mentors/photos/Xinyi_Li.jpg' },
-  { id: 'tianhua-zhao', photo: 'mentors/photos/Tianhua_Zhao.jpg' },
-  { id: 'jiayi-he', photo: 'mentors/photos/Jiayi_He.jpg' },
-  { id: 'cong-liu', photo: 'mentors/photos/Cong_Liu.jpg' },
-  { id: 'ruicha-shao', photo: 'mentors/photos/Ruichao_Shao.png' },
-  { id: 'yongyan-zhang', photo: 'mentors/photos/Yongyan_Zhang.png' },
+  { id: 'sihui-mao', order: '01', photo: 'mentors/photos/Sihui_Mao.jpg' },
+  { id: 'xinyi-li', order: '02', photo: 'mentors/photos/Xinyi_Li.jpg' },
+  { id: 'tianhua-zhao', order: '03', photo: 'mentors/photos/Tianhua_Zhao.jpg' },
+  { id: 'jiayi-he', order: '04', photo: 'mentors/photos/Jiayi_He.jpg' },
+  { id: 'cong-liu', order: '05', photo: 'mentors/photos/Cong_Liu.jpg' },
+  { id: 'ruicha-shao', order: '06', photo: 'mentors/photos/Ruichao_Shao.png' },
+  { id: 'yongyan-zhang', order: '07', photo: 'mentors/photos/Yongyan_Zhang.png' },
+  { id: 'ruoheng-li', order: '08', photo: 'mentors/photos/Ruoheng_Li.jpg' },
 ]
 const profiles = {
   en: [
@@ -20,6 +23,7 @@ const profiles = {
     { name: 'Cong Liu', role: 'G3 PhD Student, Metabolism and Nutrient Biology · Columbia University', photoAlt: 'Placeholder portrait for Cong Liu', research: 'Metabolism · Molecular and Cellular Biology · Cancer Biology · Epigenetics · Biochemistry', areas: 'General Application Questions · CV · SOP · Interview', bio: 'I graduated from the School of Life Sciences at Tsinghua University and am now a PhD candidate in the Metabolism and Nutrient Biology track at Columbia University Irving Medical Center. Back in undergrad, I studied cellular metabolism and the key roles of mitochondria in cell proliferation. Building on my interest in metabolism, I’m now exploring how metabolism affects epigenetics and cell fate, and how these interactions contribute to cancer progression.', experience: 'I’ve been incredibly lucky to get so much support along the way with grad school applications and my research journey, and I’d love to pass it on! If you ever want to chat about grad school applications, research, life as a grad student, or just anything on your mind, come say hi anytime :)', availability: 'General Application Questions · CV · SOP · Interview' },
     { name: 'Ruichao Shao', role: 'G1 PhD Student, Program in Neuroscience (PiN) · Harvard University', photoAlt: 'Placeholder portrait for Ruicha Shao', research: 'Neuroscience · Physiology', areas: 'General Application Questions · CV · Interview · SOP', bio: 'I graduated from Zhili College at Tsinghua University in 2026 and I conducted my undergraduate scientific training at National Institute of Biological Sciences, Beijing (NIBS), where I investigated the physiological responses after sleep deprivation in mice. I am now pursuing my PhD at Harvard University, studying the bidirectional interaction between the brain and our body.', experience: 'I experienced a crazy application cycle last year and I received a lot of help along the way. I am happy to share my experience and help with any questions you may encounter during application.', availability: 'General Application Questions · CV · Interview · SOP' },
     { name: 'Yongyan Zhang', role: 'G2 PhD Student, BCMB · Weill Cornell Medicine', photoAlt: 'Profile portrait of Yongyan Zhang', research: 'Genetics · Genomics · Molecular Biology', areas: 'General Application Questions · CV · Interview', bio: 'I graduated from Zhili College, Tsinghua University and I’m now a BCMB graduate student at Weill Cornell Medicine. During undergrad, I studied transcriptional regulation of non-coding elements using CRISPR screens and genomics techniques. Currently, I am exploring how genome stability is maintained on chromatin level.', experience: 'I would love to share my experience with graduate school application and summer internships. Happy to discuss thoughts on the research journey and hope it could offer some useful perspective!', availability: 'General Application Questions · CV · Interview' },
+    { name: 'Ruoheng Li', role: 'G3 PhD Student, Department of Physiology, Development and Neuroscience · University of Cambridge', photoAlt: 'Profile portrait of Ruoheng Li', research: 'Developmental Biology · Morphogenesis · Developmental Mechanics', areas: 'General Consultations · CV · SOP · Interview Preparation', bio: 'I graduated from the School of Life Sciences of Tsinghua University in 2024 and am currently a 3rd year PhD student at the University of Cambridge, Department of Physiology, Development and Neuroscience. During my undergraduate years I developed a strong interest in understanding how shapes and geometries emerge during embryonic development, which led me to an interdisciplinary approach that looks at development through the lens of mechanics. My current project seeks to explore the active forces and mechanical properties underlying large-scale morphogenetic movements that shape the early embryo, using chick embryos as my experimental system.', experience: 'Due to this niche research interest I applied to multiple programmes in the US, UK and Germany, which, together with my PhD experience, makes me relatively familiar with PhD opportunities and research cultures in the UK and Europe. Happy to share information and experiences with people interested in these places :)', availability: 'General Consultations · CV · SOP · Interview Preparation' },
   ],
   zh: [
     { name: '毛斯慧', role: 'BBS（TMMPP 方向）博士二年级 · 耶鲁大学', photoAlt: 'Sihui Mao 的个人照片', research: '细胞生物学 · 细胞与分子生理学 · 代谢 · 神经学 · 生物化学', areas: '申请综合问题 · 简历 · SOP · 个人陈述 · 面试', bio: '我本科毕业于清华大学致理书院，并在这期间逐渐培养了对细胞代谢与生理学的浓厚兴趣。目前，我正在耶鲁大学攻读博士学位，研究方向为利用 iPSC 模型研究神经元和胶质细胞中的线粒体功能。', experience: '本科期间，我曾在清华大学写作中心担任两年写作助理，积累了帮助同学梳理思路、搭建清晰叙事框架、以及更准确有效地传达科学信息的经验。进入耶鲁大学后，我也通过系统的科学写作训练，进一步提升了自己科研写作与沟通能力。迄今为止，我已经帮助五名以上的同学准备和完成研究生申请。在这个过程中，我尤其享受与同学们一起交流想法、梳理兴趣与目标，并在彼此的分享和讨论中共同学习、共同成长。', availability: '申请综合问题 · 简历 · 学术目的陈述 · 个人陈述 · 面试' },
@@ -29,9 +33,12 @@ const profiles = {
     { name: '刘悰', role: '代谢与营养生物学博士三年级 · 哥伦比亚大学', photoAlt: '刘悰的示例照片', research: '代谢 · 分子与细胞生物学 · 肿瘤生物学 · 表观遗传学 · 生物化学', areas: '申请综合问题 · 简历 · SOP · 面试', bio: '我本科毕业于清华大学生命科学学院，目前在哥伦比亚大学欧文医学中心攻读代谢与营养生物学方向的博士学位。本科期间，我曾研究细胞代谢以及线粒体在细胞增殖中的主要作用。毕业后延续对代谢的兴趣，我现在正在探索代谢如何影响表观遗传与细胞命运，以及这些相互作用如何推动癌症进展。', experience: '在研究生申请和科研的道路上，我非常幸运地得到了许多支持，也希望把这份帮助传递下去！无论你想聊研究生申请、科研、研究生生活，还是任何心事，都欢迎随时来找我交流 :)', availability: '申请综合问题 · 简历 · 学术目的陈述 · 面试' },
     { name: '邵瑞超', role: '神经科学项目（PiN）博士一年级 · 哈佛大学', photoAlt: 'Ruicha Shao 的占位头像', research: '神经科学 · 生理学', areas: '申请综合问题 · 简历 · 面试 · SOP', bio: '我于 2026 年毕业于清华大学致理书院，本科期间在北京生命科学研究所（NIBS）接受科研训练，研究小鼠睡眠剥夺后的生理反应。目前，我正在哈佛大学攻读博士学位，研究大脑与身体之间的双向相互作用。', experience: '去年，我经历了一个非常疯狂的申请季，也在这一路上得到了许多帮助。我很乐意分享自己的经历，并帮助解答大家在申请过程中可能遇到的各种问题。', availability: '申请综合问题 · 简历 · 面试 · 学术目的陈述' },
     { name: '张咏妍', role: 'BCMB 博士二年级 · 康奈尔大学威尔医学院', photoAlt: 'Yongyan Zhang 的个人照片', research: '遗传学 · 基因组学 · 分子生物学', areas: '申请综合问题 · 简历 · 面试', bio: '我本科毕业于清华大学致理书院，目前是康奈尔大学威尔医学院 BCMB 项目的研究生。本科期间，我利用 CRISPR 筛选和基因组学技术研究非编码元件的转录调控。目前，我正在探索染色质层面维持基因组稳定性的机制。', experience: '我很乐意分享自己在研究生申请和暑期科研实习方面的经验，也欢迎一起交流科研道路上的思考，希望能为大家提供一些有用的视角！', availability: '申请综合问题 · 简历 · 面试' },
+    { name: '李若蘅', role: '生理学、发育与神经科学系博士三年级 · 剑桥大学', photoAlt: '李若蘅的个人照片', research: '发育生物学 · 形态发生 · 发育力学', areas: '综合咨询 · 简历 · SOP · 面试准备', bio: '我于 2024 年毕业于清华大学生命科学学院，目前是剑桥大学生理学、发育与神经科学系的博士三年级学生。本科期间，我对胚胎发育过程中形状与几何结构如何形成产生了浓厚兴趣，并由此走上了从力学视角研究发育的跨学科道路。目前，我以鸡胚为实验体系，探索塑造早期胚胎的大尺度形态发生运动背后的主动力与力学性质。', experience: '由于这一相对小众的研究兴趣，我申请了美国、英国和德国的多个项目。结合自己的博士学习经历，我对英国及欧洲的博士机会和科研文化比较熟悉。很高兴与对这些地方感兴趣的同学分享信息和经验 :)', availability: '综合咨询 · 简历 · 学术目的陈述 · 面试准备' },
   ],
 }
 
 export const mentorProfiles = computed(() =>
-  profiles[locale.value].map((profile, index) => ({ ...shared[index], ...profile })),
+  profiles[locale.value]
+    .map((profile, index) => ({ ...shared[index], ...profile }))
+    .sort((a, b) => Number(a.order) - Number(b.order)),
 )
